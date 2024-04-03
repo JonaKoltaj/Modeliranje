@@ -19,7 +19,7 @@ plot(t,-Y1(:,2),'r')
 koncna1 = Y1(end,2)
 
 %3
-r = 6371;
+r = 6371000;
 g = @(y) g0*((r/(r+y))^2);
 dY2 = @(t,Y) [Y(2);f(t,Y(1),Y(2),g(Y(1)),ro1)];
 [t,Y2] = ode45(dY2,t,Y0);
@@ -44,3 +44,7 @@ plot(t,-Y3(:,2),'y')
 brez_odriva = Y3(30, 2);
 z_odrivom = Y4(30, 2);
 razlika = z_odrivom - brez_odriva
+
+%6
+fun2 = @(x) fun1(x) + 300;
+cas300 = fzero(fun2,35) % to sm sam pac uganla da je x0, kr je tm bliz
