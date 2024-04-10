@@ -14,4 +14,3 @@ figure
 plot(X(1,:),X(2,:),"-o")
 
 
-% za naprej je za pogledat osnutek 1 in se lotit ta prve funkcije
