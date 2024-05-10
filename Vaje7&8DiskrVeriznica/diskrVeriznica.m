@@ -10,11 +10,10 @@ for i=1:n
 end
 vsote_mi = [0,cumsum(mi)];
 
-ksi = @(u,v) L./sqrt(1+(v-u.*vsote_mi));
+ksi = @(u,v) L./sqrt(1+(v-u.*vsote_mi).^2);
 eta = @(u,v) ksi(u,v).*(v-u.*vsote_mi);
-U = @(u,v) sum(ksi(u,v)) - obesisceD(1) + obesisceL(1);
-V = @(u,v) sum(eta(u,v)) - obesisceD(2) + obesisceL(2);
-F = @(w) [U(w(1),w(2));V(w(1),w(2))];
+F = @(w) F_uv(w,obesisceL,obesisceD,L,vsote_mi);
+F(w0)
 
 w = fsolve(F,w0);
 X = zeros(2,n+2);
