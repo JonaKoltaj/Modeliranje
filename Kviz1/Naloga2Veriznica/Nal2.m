@@ -7,8 +7,8 @@ w0 = [-2;-5];
 g=9.81;
 
 %2.1
-% X = diskrVeriznica(w0,A,B,L,L);
-% n = length(L);
+X = diskrVeriznica(w0,A,B,L,L);
+n = length(L);
 % figure
 % hold on
 % for i=1:(n+1)
@@ -40,7 +40,7 @@ X_mag = rotacija(-45)*X2;
 % plot(X(1, :), X(2, :), 'red');
 
 % spet vidimo iz slike da je cetrti ta pravi
-vsotaMin = X_mag(1,4) + X_mag(2,4);
+vsotaMinMag = X_mag(1,4) + X_mag(2,4);
 
 %2.5
 fun2 = @(k) sum(k*L) - 3;
