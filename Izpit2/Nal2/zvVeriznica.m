@@ -16,6 +16,4 @@ T_min = [x_min; w(x_min)];
 % figure
 % hold on
 % plot(x,w(x))
-% plot(T_min(1),T_min(2),'x')
-% plot(obesisceL(1),obesisceL(2),'o')
-% plot(obesisceD(1),obesisceD(2),'o')
+% plot(T_min(1),T_min(2),'o')
